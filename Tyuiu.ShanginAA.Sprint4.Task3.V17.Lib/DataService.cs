@@ -6,7 +6,12 @@ namespace Tyuiu.ShanginAA.Sprint4.Task3.V17.Lib
     {
         public int Calculate(int[,] array)
         {
-            
+            int sum = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                sum += array[i, 3];
+            }
+            return sum;
         }
     }
 }
