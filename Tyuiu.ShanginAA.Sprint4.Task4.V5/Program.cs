@@ -26,32 +26,37 @@ namespace Tyuiu.ShanginAA.Sprint4.Task4.V5
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int len;
-            Console.Write("Введите количество элементов массива: ");
-            len = Convert.ToInt32(Console.ReadLine());
+            int[,] matrix = new int[5, 5];
 
-            int[] array = new int[len];
+            Console.WriteLine("Введите элементы матрицы размером 5x5 (значения от 3 до 9):");
 
-            for (int i = 0; i <= array.Length - 1; i++)
+            for (int i = 0; i < 5; i++)
             {
-                Console.Write("Введите значение элемента под номером " + i + ": ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
+                for (int j = 0; j < 5; j++)
+                {
+                    int value;
+                    while (true)
+                    {
+                        Console.Write($"Введите элемент массива [{i + 1}, {j + 1}]: ");
+                        if (int.TryParse(Console.ReadLine(), out value) && value >= 3 && value <= 9)
+                        {
+                            matrix[i, j] = value;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Некорректное значение. Введите число от 3 до 9.");
+                        }
+                    }
+                }
             }
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine();
-            Console.WriteLine("Массив: ");
-
-            for (int i = 0; i <= len - 1; i++)
-            {
-                Console.Write(array[i] + "\t");
-            }
-            Console.WriteLine();
-            Console.WriteLine("Результат: ");
-            Console.WriteLine(ds.Calculate(array));
+            var result = ds.Calculate(matrix);
+            Console.WriteLine("Сумма четных элемнтов массива: " + result);
 
             Console.ReadKey();
 
