@@ -6,12 +6,12 @@ namespace Tyuiu.ShanginAA.Sprint4.Task0.V5.Lib
     {
         public int GetSumEvenArrEl(int[] array)
         {
-            int p = 1;
+            int p = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] % 2 == 0)
                 {
-                    p *= array[i];
+                    p += array[i];
                 }
             }
             return p;

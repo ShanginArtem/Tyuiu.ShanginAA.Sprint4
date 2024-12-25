@@ -26,7 +26,7 @@ namespace Tyuiu.ShanginAA.Sprint4.Task0.V5
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[] array = { 9, 5, 7, 4, 5, 3, 7, 8, 9, 1 };
+            int[] array = { 8, 9, 4, 1, 2, 3, 4, 5, 6, 7 };
             var res = ds.GetSumEvenArrEl(array);
 
             Console.WriteLine("Исходный массив");
