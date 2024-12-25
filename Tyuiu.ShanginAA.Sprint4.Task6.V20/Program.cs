@@ -1,6 +1,6 @@
-﻿using Tyuiu.ShanginAA.Sprint4.Task6.V22.Lib;
+﻿using Tyuiu.ShanginAA.Sprint4.Task6.V20.Lib;
 
-namespace Tyuiu.ShanginAA.Sprint4.Task6.V22
+namespace Tyuiu.ShanginAA.Sprint4.Task6.V20
 {
     class Program
     {
@@ -14,7 +14,7 @@ namespace Tyuiu.ShanginAA.Sprint4.Task6.V22
             Console.WriteLine("* Спринт #4                                                               *");
             Console.WriteLine("* Тема: Обработка целочисленной информации                                *");
             Console.WriteLine("* Задание #6                                                              *");
-            Console.WriteLine("* Вариант #22                                                             *");
+            Console.WriteLine("* Вариант #20                                                             *");
             Console.WriteLine("* Выполнил: Шангин Артём Александрович | ИСПб-24-1                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
@@ -26,32 +26,26 @@ namespace Tyuiu.ShanginAA.Sprint4.Task6.V22
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int len;
-            Console.Write("Введите количество элементов массива: ");
-            len = Convert.ToInt32(Console.ReadLine());
+            var predmet = new string[] { "Математика", "Физика", "Химия", "Биология", "География", "История", "Литература" };
 
-            int[] array = new int[len];
+            Console.WriteLine("Исходный массив: ");
 
-            for (int i = 0; i <= array.Length - 1; i++)
+            string[] mas = ds.Calculate(predmet);
+
+            for (int i = 0; i <= predmet.Length - 1; i++)
             {
-                Console.Write("Введите значение элемента под номером " + i + ": ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(predmet[i]);
             }
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine();
-            Console.WriteLine("Массив: ");
-
-            for (int i = 0; i <= len - 1; i++)
+            Console.WriteLine("элементы, длина которых меньше 10 символов");
+            for (int i = 0; i <= mas.Length - 1; i++)
             {
-                Console.Write(array[i] + "\t");
+                Console.WriteLine(mas[i]);
             }
-            Console.WriteLine();
-            Console.WriteLine("Результат: ");
-            Console.WriteLine(ds.Calculate(array));
 
             Console.ReadKey();
 
